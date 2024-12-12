@@ -1,0 +1,4 @@
+pillow
+speedtest
+pytube
+moviepy
