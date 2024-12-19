@@ -1,17 +1,11 @@
-import os
 from tkinter import *
 from tkinter import filedialog as fb
-from PIL import Image
 from CTkMessagebox import CTkMessagebox
 import pandas as pd
-import random
-import string
 import customtkinter as ctk
 import time
-import speedtest as st
-from pytube import YouTube
-import moviepy.editor as mp
 import threading
+import app
 
 
 class Interface: 
@@ -20,9 +14,9 @@ class Interface:
         self.__selected_theme = "dark-blue"
         self.__menuOption = ["Home", "File Conversion", "Password Generation", 
                             "Speedtest", "YT Video Download", "Convert To Audio"]
-        self.__fileConvObj = FileConverter()
-        self.__pwdObj = Passwords()
-        self.__netOpeObj = NetworkOperation()
+        self.__fileConvObj = app.FileConverter()
+        self.__pwdObj = app.Passwords()
+        self.__netOpeObj = app.NetworkOperation()
 
         self.__root = ctk.CTk()
         self.__root.title("Utilities App")

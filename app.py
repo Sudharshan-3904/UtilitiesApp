@@ -4,6 +4,7 @@ Work TO BE Completed:
 //TODO - Text to PDF
 //TODO - Word to pdf
 //TODO - Monitor Testing
+//TODO - Spee Tes Problem
 -------
 
 Working Components
@@ -21,9 +22,9 @@ import pandas as pd
 import random
 import string
 import time
-import speedtest as st
+import speedtest
 from pytube import YouTube
-import moviepy.editor as mp
+import moviepy as mp
 import threading
 
 class FileConverter:
@@ -109,16 +110,16 @@ class Passwords:
 
 class NetworkOperation:
     def speedTest(self):
-        server = st.Speedtest()
-        server.get_best_server()
+        st = speedtest.Speedtest()
 
-        down = server.download()
+        down = st.download()
         down = down / 1000000
 
-        up = server.upload()
+        up = st.upload()
         up = up / 1000000
-
-        ping = server.results.ping
+        
+        st.get_servers([])
+        ping = st.results.ping
         return {"Download": down, "Upload" : up, "Ping" : ping}
     
     def ytVideoDownload(self, url, saveLocation):
@@ -136,4 +137,5 @@ class FileOPerations:
         ...
 
 
-
+thing = NetworkOperation()
+print(thing.speedTest())
